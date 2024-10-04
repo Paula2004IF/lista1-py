@@ -120,12 +120,12 @@ def q14():
 #    do desconto desejado e imprima o valor do desconto e o valor
 #    do produto subtraindo o desconto.
 def q15():
-    produto = float (input('Digite o valor do produto: R$' ))
-    percentualdedesconto = int(input('Digite o desconto oferecido: R$'))
+    produto = round(float (input('Digite o valor do produto: R$' )))
+    percentualdedesconto = round(float(input('Digite o percentualdedesconto oferecido: ')))
 
     print(f'O valor do produto é: R${produto}')
     print(f'O valor de desconto é: {percentualdedesconto}%')
-    print(f'O valor do produto com desconto é: R${round(produto-(produto*percentualdedesconto/100))}')
+    print(f'O valor do produto com desconto é: R${round(produto-(produto*percentualdedesconto/100),2)}')
 q15()
 
 #16. Faça um programa que calcule o reajuste do salário de um
