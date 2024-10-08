@@ -54,6 +54,19 @@ def q4():
 
 #5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
 
+
+def q5():
+
+    
+    numero = (int(input('Digite um número: ')))
+    if numero % 3 == 0 and numero % 7 == 0:
+        print('É divisível por 3 e por 7')
+    else:
+        print('Não é divisível por 3 e por 7')
+
+
+
+
 #6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários
 #   estatutários. O valor máximo da prestação não poderá ultrapassar 30% do salário
 #   bruto. Faça um programa que permita entrar com o salário bruto
@@ -190,6 +203,6 @@ match questao:
         q2()
     case 3:
         q3()
-    case 4:
-        q4()
+    case 5:
+        q5()
 
