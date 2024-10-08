@@ -44,6 +44,13 @@ def q3():
     
 
 #4. Faça um programa que leia um número e informe se ele é ou não divisível por 5.
+def q4():
+    numero = (int (input ('Digite um número: ')))
+    if numero % 5==0:
+        print (f'É multiplo de 5.')
+    else:
+        print (f'Não é múltiplo de 5.')
+
 
 #5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
 
@@ -183,4 +190,6 @@ match questao:
         q2()
     case 3:
         q3()
+    case 4:
+        q4()
 
