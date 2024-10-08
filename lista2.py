@@ -33,6 +33,15 @@ def q2():
 
 #3. Faça um programa que leia um número e imprima uma das duas mensagens:
 #   "É múltiplo de 3"ou "Não é múltiplo de 3".
+def q3():
+    numero = int(input('Digite um número: '))
+    if numero % 3 == 0:
+        print(f'É múltiplo de 3')
+    else:
+        print(f'Não é múltiplo de 3')
+    
+
+    
 
 #4. Faça um programa que leia um número e informe se ele é ou não divisível por 5.
 
@@ -172,6 +181,6 @@ match questao:
         q1()
     case 2:
         q2()
-    case _:
-        print(f'Questão inválida!')
+    case 3:
+        q3()
 
