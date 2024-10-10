@@ -68,9 +68,20 @@ def q5():
 
 
 #6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários
-#   estatutários. O valor máximo da prestação não poderá ultrapassar 30% do salário
+#   estatutários. O valosr máximo da prestação não poderá ultrapassar 30% do salário
 #   bruto. Faça um programa que permita entrar com o salário bruto
 #   e o valor da prestação e informar se o empréstimo pode ou não ser concedido.
+
+
+def q6():
+    salario = float(input('Digite o valor do salário:R$ '))
+    valor_da_prestacao = float(input('Valor da parcela:R$ '))
+    limite = salario * 0.30
+    if valor_da_prestacao <= limite:
+        print ('Empréstimo aprovado.')
+    else:
+        print ('Empréstimo negado.')
+li
 
 #7. Faça um programa que leia um número e indique se o número está compreendido
 #   entre 20 e 50 ou não.
@@ -203,6 +214,25 @@ match questao:
         q2()
     case 3:
         q3()
+    case 4:
+        q4()
     case 5:
         q5()
-
+    case 6:
+        q6()
+    case 7:
+        q7()
+    case 8:
+        q8()
+    case 9:
+        q9()
+    case 10:
+        q10()
+    case 11:
+        q11()
+    case 12:
+        q12()
+    case 13:
+        q13()
+    case 14:
+        q14()
