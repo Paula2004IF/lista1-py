@@ -60,7 +60,7 @@ def q5():
     
     numero = (int(input('Digite um número: ')))
     if numero % 3 == 0 and numero % 7 == 0:
-        print('É divisível por 3 e por 7')
+        print(f'{num}divisível por 3 e por 7')
     else:
         print('Não é divisível por 3 e  por 7')
 
@@ -81,20 +81,56 @@ def q6():
         print ('Empréstimo aprovado.')
     else:
         print ('Empréstimo negado.')
-li
+
 
 #7. Faça um programa que leia um número e indique se o número está compreendido
 #   entre 20 e 50 ou não.
+def q7 ():
+    numero = int(input())
 
 #8. Faça um programa que leia um número e imprima uma das mensagens:
 #   "Maior do que 20", "Igual a 20"ou "Menor do que 20".
+
+def q8():
+    numero = int(input('Digite um número: '))
+    if numero > 20:
+        print('Maior que 20')
+    elif numero == 20:
+        print('É igual a 20')
+    else:
+        print('Então é menor que 20')
+
 
 #9. Faça um programa que permita entrar com o ano de nascimento da pessoa e com o
 #   ano atual. O programa deve imprimir a idade da pessoa. Não se esqueça de
 #   verificar se o ano de nascimento informado é válido.
 
+def q9():
+    ano_de_nascimento = int(input('Digite o ano de nascimento: '))
+    ano_atual = int(input('Digite o ano atual: '))
+
+    idade = ano_atual - ano_de_nascimento
+    print (f'{idade} anos.')
+    if idade < 0:
+        print ('Idade não válida.')
+    else:
+        print ('Idade válida')
+
+
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
+def q10():
+    num1 = int(input('Digite um número: '))
+    num2 = int(input('Digite outro número: '))
+    num3 = int(input('Digite mais um número: '))
+
+    if num1 >num2 and num1 >num3 and num2>num3:
+        print (f'{num1},{num2},{num3}')
+    elif num2 >num1 and num2>num3 and num1>num3:
+        print (f'{num2},{num1},{num3}')
+    else num3 :
+    
+
 
 #11. Faça um programa que leia 3 números e imprima o maior deles.
 
