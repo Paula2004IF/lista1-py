@@ -124,20 +124,34 @@ def q10():
     num2 = int(input('Digite outro número: '))
     num3 = int(input('Digite mais um número: '))
 
-    if num1 >num2 and num1 >num3 and num2>num3:
-        print (f'{num1},{num2},{num3}')
-    elif num2 >num1 and num2>num3 and num1>num3:
-        print (f'{num2},{num1},{num3}')
-    else num3 :
+    numeros = [num1, num2, num3]
+    numeros.sort()
+    print (f' Números em ordem crescente: {numeros}')
     
 
 
 #11. Faça um programa que leia 3 números e imprima o maior deles.
-
+def q11():
+    num1 = int (input('Digite um número: '))
+    num2 = int (input('Digite outro número: '))
+    num3 = int (input('Digite mais número: '))
+    maior = max (num1, num2, num3)
+    print (f'O maior número é: {maior}')    
 #12. Faça um programa que leia a idade de uma pessoa e informe:
+
 #• Se é maior de idade
 #• Se é menor de idadea
 #• Se é maior de 65 anos
+
+def q12():
+
+    idade = int(input('A idade da pessoa é: '))
+    if idade >=65:
+        print (f'A pessoa é maior de 65 anos')
+    elif idade >= 18:
+        print (f'A pessoa é maior de idade.')
+    else:
+        print (f'A pessoa é menor de idade.')
 
 #13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota
 #da prova 2 de um aluno. O programa deve imprimir o nome, a nota da prova 1,
@@ -145,6 +159,19 @@ def q10():
 #"Reprovado"ou "em Prova Final"(a média é 7 para aprovação, menor que 3 para
 #reprovação e as demais em prova final).
 
+def q13():
+    nome = input ('Digite o nome do aluno: ')
+    nota1 = float (input('Digite a primeira nota: '))
+    nota2 = float (input('Digite a segunda nota: '))
+    media = (nota1 + nota2) / 2
+
+    print (f'A média é: {media}')
+    if media >= 7:
+        print (f'Aluno aprovado!')
+    elif media < 3:
+        print ('Aluno reprovado!')
+    else:
+        print (f'Aluno irá para Prova Final!')
 #14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o
 #desconto do INSS segundo a tabela seguir:
 #Salário Faixa de Desconto
@@ -153,9 +180,26 @@ def q10():
 #Maior que R$1200,00 e menor ou igual a R$2000,00 25%
 #Maior que R$2000,00 30%
 
+def q14():
+    salario = float(input('Valor do salário: R$'))
+    if salario <= 600:
+        desconto = 0
+        print (f'Isento')
+    elif salario <= 1200:
+        desconto = 0,.20* salario
+        print (f'Desconto de 20%.')
+    elif salario <= 2000:
+        desconto = 0.25 * salario
+    else:
+        desconto = 0.30 * salario
+        print (f'Desconto do INSS de 30% é: R${desconto}')
 #15. Um comerciante comprou um produto e quer vendê-lo com um lucro de 45% se o
 #valor da compra for menor que R$20,00, caso contrário, o lucro será de 30%.
-#Faça um programa que leia o valor do produto e imprima o valor da venda.
+#Faça um programa que leia o valor do produto e imprima o valor da venda:
+
+def q15():
+
+
 
 #16. A confederação brasileira de natação irá promover eliminatórias para o
 #próximo mundial. Faça um programa que receba a idade de um nadador e imprima
@@ -272,3 +316,5 @@ match questao:
         q13()
     case 14:
         q14()
+    case 15:
+        q15()
