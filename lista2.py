@@ -199,10 +199,13 @@ def q14():
 #Faça um programa que leia o valor do produto e imprima o valor da venda:
 
 def q15():
-valor_do_produto = float (input('Digite o valor do produto: R$'))
-if valor_do_produto <= 20:
-    print (f' Lucro do produto será de: ')
-
+    valor_do_produto = float (input('Digite o valor de compra do produto: R$'))
+    if valor_do_produto < 20:
+        valor_venda = valor_do_produto * 1.45
+        print (f'O valor de venda deste produto é: R${valor_venda}')
+    else:
+        valor_venda = valor_do_produto * 1.30
+        print (f'O valor de venda deste produto é: R${valor_venda}')
 
 
 #16. A confederação brasileira de natação irá promover eliminatórias para o
@@ -214,6 +217,18 @@ if valor_do_produto <= 20:
 #Juvenil A 11 - 13 anos
 #Juvenil B 14 - 17 anos
 #Sênior maiores de 18 anos
+def q16():
+        idade = int(input("Digite a idade do nadador:"))
+        if 5 <= idade <= 7:
+            print (f'Nadador pertence a Categoria Infantil A')
+        elif 8 <= idade <= 10:
+            print (f'Nadador pertence a Categoria Infantil B')
+        elif 11 <= idade <= 13:
+            print (f'Nadador pertence a Categoria Juvenil A')
+        elif 14 <=idade <= 17:
+            print (f'Nadador pertence a Categoria Juvenil B')
+        else:
+            print (f'Nadador pertence a Categoria Sênior.')
 
 #17. Depois da liberação do governo para as mensalidades dos planos de saúde,
 #as pessoas começaram a fazer pesquisas para descobrir um bom plano, não
@@ -227,6 +242,8 @@ if valor_do_produto <= 20:
 #Acima de 45 até 59 anos R$150,00
 #Acima de 59 até 65 anos R$250,00
 #Maior que 65 anos R$400,00
+
+    
 
 #18. Faça um programa que leia um número inteiro entre 1 e 12 e escreva o mês
 #correspondente. Caso o usuário digite um número fora desse intervalo, deverá
@@ -322,3 +339,13 @@ match questao:
         q14()
     case 15:
         q15()
+    case 16:
+        q16()
+    case 17:
+        q17()
+    case 18:
+        q18()
+    case 19:
+        q19()
+    case 20:
+        q20()
