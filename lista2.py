@@ -184,20 +184,24 @@ def q14():
     salario = float(input('Valor do salário: R$'))
     if salario <= 600:
         desconto = 0
-        print (f'Isento')
+        print (f'Isento.')
     elif salario <= 1200:
         desconto = 0,.20* salario
-        print (f'Desconto de 20%.')
+        print (f'Desconto de 20% no salário.')
     elif salario <= 2000:
         desconto = 0.25 * salario
+        print (f'Desconto de 25% no salário.')
     else:
         desconto = 0.30 * salario
-        print (f'Desconto do INSS de 30% é: R${desconto}')
+        print (f'Desconto de 30% no salário.')
 #15. Um comerciante comprou um produto e quer vendê-lo com um lucro de 45% se o
 #valor da compra for menor que R$20,00, caso contrário, o lucro será de 30%.
 #Faça um programa que leia o valor do produto e imprima o valor da venda:
 
 def q15():
+valor_do_produto = float (input('Digite o valor do produto: R$'))
+if valor_do_produto <= 20:
+    print (f' Lucro do produto será de: ')
 
 
 
