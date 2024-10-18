@@ -2,6 +2,12 @@
 Exercícios sobre os comandos de condição em python
 '''
 
+from datetime import date, datetime
+from deep_translator import GoogleTranslator # pip3 install deep-translator
+
+HOJE = datetime.now()
+tradutor = GoogleTranslator(source = 'en', target = 'pt')
+
 #1. Faça um programa que leia dois valores numéricos inteiros e efetue
 #   a adição, caso o resultado seja maior que 10, apresentá-lo.
 def q1():
@@ -258,6 +264,16 @@ def q16():
 #• Se a soma dos pontos for maior do que 100, imprimir a média aritmética entre eles,
 #  caso contrário, imprimir a mensagem "Equipe desclassificada".
 
+def q18():
+    mes = int (input('Digite o número do mês: '))
+    if mes < 1 or mes> 12:
+        print ('Mês inválido')
+    else:
+        data = datetime.strptime(f'01/{mes}/24','%d/%m/%y')
+        mes_extenso = data.strftime('%B')
+        print(tradutor.translate(mes_extenso))
+
+
 #20. O banco XXX concederá um crédito especial com juros de 2% aos seus clientes de
 #acordo com o saldo médio no último ano. Faça um programa que leia o saldo médio
 #de um cliente e calcule o valor do crédito de acordo com a tabela a seguir.
@@ -269,6 +285,17 @@ def q16():
 #de 1001 a 3000 40% do valor do saldo médio
 #acima de 3001 50% do valor do saldo médio
 
+def q20():
+    saldo_medio = float (input('Digite o saldo médio da conta bancária: R$'))
+    
+    if saldo_medio <= 500:
+        print (f'Nenhum crédito.')
+    elif saldo_medio <= 1001:
+        print (f'Tem um saldo de crédito de 30%.')
+    elif saldo_medio <= 3000:
+        print (f'Saldo de crédito de 40%.')
+    else:
+        print (f'Saldo de crédito de 50%')
 #21. A biblioteca de uma Universidade deseja fazer um programa que leia o nome do
 #livro que será emprestado, o tipo de usuário (professor ou aluno) e possa
 #imprimir um recibo conforme mostrado a seguir. Considerar que o professor
@@ -289,6 +316,51 @@ def q16():
 #Peixe          230cal Sorvete diet     110cal Suco de laranja   70cal
 #Frango         250cal Mousse diet      170cal Suco de melão     100cal
 #Carne          350cal Mousse chocolate 200cal Refrigerante diet 65cal
+def q23():
+    pratos = '''
+Pratos
+1 - Vegetariano 
+2 - Peixe
+3 - Frango
+4 - Carne
+
+ Opção: 
+    '''
+    sobremesas = '''
+    Sobremesas:
+    1 - Abacaxi
+    2 - Sorvete Diet
+    3 - Mousse Diet
+    4 - Mousse Chocolate
+    Opção: 
+    '''
+    bebidas = '''
+    Bebidas:
+    1 - Chá
+    2 - Suco de Laranja
+    3 - Suco de Melão
+    4 - Refrigerante Diet
+
+     Opção: 
+    '''
+    prato = int(input(pratos))
+    sobremesa = int(input(sobremesas))
+    bebida = int(input(bebidas))
+
+    cal = 0
+    cal += 180 if prato == 1 else 0
+    cal += 230 if prato == 2 else 0
+    cal += 250 if prato == 3 else 0
+    cal += 350 if prato == 4 else 0    
+    cal += 75 if sobremesa == 1 else 0
+    cal += 110 if sobremesa == 2 else 0
+    cal += 170 if sobremesa == 3 else 0
+    cal += 200 if sobremesa == 4 else 0
+    cal += 20 if bebida == 1 else 0
+    cal += 70 if bebida == 2 else 0
+    cal += 100 if bebida == 3 else 0
+    cal += 65 if bebida == 4 else 0    
+    print(f'Total de calorias: {cal}')
 
 #24. A polícia rodoviária resolveu fazer cumprir a lei e vistoriar veículos para
 #cobrar dos motoristas o DUT. Sabendo-se que o mês em que o emplacamento do
@@ -349,3 +421,8 @@ match questao:
         q19()
     case 20:
         q20()
+    case 23:
+        q23()
+        
+
+        
