@@ -40,13 +40,6 @@ def q4():
 #lidos. Suponha que os números lidos sejam positivos.
 
 
-    def q5():
-      
-        num1 = int (input ('Digite um número: '))
-        num2 = int (input( 'Digite outro número: '))
-        produto = 0 
-        
-          num in range ():
 
 #6. Crie um programa que imprima os 20 primeiros termos da série de Fibonacci.
 #Observação: os dois primeiros termos desta série são 1 e 1 e os demais são gerados
@@ -54,11 +47,35 @@ def q4():
 #• 1 + 1 = 2, terceiro termo;
 #• 1 + 2 = 3, quarto termo, etc.
 # 1 1 2 3 5 8 13 21
+def q6():
 
+    num1 = 0 
+    num2 = 1
+    soma = 0
+    print(num2)
+    for count in range (1,20):
+        soma  = num1 + num2
+        num1 = num2
+        num2 = soma
+        print(soma)
 #7. Crie um programa que permita entrar com o nome, a nota da
 #prova 1 e da prova 2 de 15 alunos. Ao final, imprimir uma listagem, contendo:
 #nome, nota da prova 1, nota da prova 2, e média das notas de cada aluno. Ao final,
 #imprimir a média geral da turma.
+def q7():
+    relatorio = '\nNOME\tN1\tN2\tMEDIA\n'
+    media_geral = 0
+    qtde_alunos = input_int ('Qtde de Alunos: ')
+    for _ in range(qtde_alunos):
+        nome = input('Nome: ')
+        n1 = input_float('Nota 1: ')
+        n2 = input_float('Nota 2: ')
+        media = (n1 + n2) / 2
+        media_geral += media
+        relatorio += f'{nome}\t{n1}\t{n2}\t{round(media,1)}\n'
+    media_geral = media_geral / qtde_alunos
+    print(relatorio)
+    print(f'\nMédia Geral: {round(media_geral,1)}')
 
 #8. Faça umprograma que permita entrar com o nome e o salário bruto de 10 pessoas.
 #Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
