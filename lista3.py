@@ -1,45 +1,88 @@
 '''
 Lista de Exercícios referentes a estruturas de iteração (repetição)
-
 '''
-# for x in range (10):
- #       print (x)
-  #  for x in range (1,10,2)     
-#1.Faça um programa que imprima todos os números de 1 até 100.
 
+from util import input_int, input_float, input_senha
+
+def exemplo_para():
+    for x in range(10):      # vai de 0 a 9
+        print(x)
+    for x in range(1,10,2):  # vai de 1 a 9, avançando de 2 em 2
+        print(x)
+    for x in range(10,1,-1): # vai de 10 a 2
+        print(x)
+
+def exemplo_enquanto():
+    opcao = -1
+    while opcao != 0:
+        opcao = int(input('Escolha uma opção (0 para sair): '))
+        print(opcao)
+
+def exemplos_input_personalizados():
+    num = input_int('Inteiro: ')
+    num2 = input_float('Real: ')
+    senha = input_senha('Senha: ')
+    print(f'num: {num}, num2: {num2}, senha: {senha}')
+
+#1.Faça um programa que imprima todos os números de 1 até 100.
 def q1():
-    for num in range (1,101):
-        print(num, end = '  ')   
+    for num in range(1,101):
+        print(num, end=' ')
 
 #2. Faça um programa que imprima todos os números pares de 100 até 1.
 def q2():
-    for num in range (100,0,-1):
-        print (num, end= ' ')
-
+    for num in range(100,1,-2):
+        print(num, end=' ')
 
 #3. Faça um programa que imprima os múltiplos de 5, no intervalo de 1 até 500.
 def q3():
-    for num in range (0,501,5):
-        print (num, end= ' ')
+    for num in range(0,501,5):
+        print(num, end=' ')
 
-#4. Faça um programa que permita entrar com o nome, a idade e o sexo de 20
+#4. Faça umprograma que permita entrar com o nome, a idade e o sexo de 20
 #pessoas.O programa deve imprimir o nome da pessoa se ela for do sexo masculino
 #e tiver mais de 21 anos.
 def q4():
-    for _ in range (2):
-        nome = input('Digite um nome: ')
-        idade = int(input('Digite a idade: '))
-        sexo = input('sexo(M/F): ').upper(). strip()[0]
+    for _ in range(20):
+        nome = input('Nome: ')
+        idade = int(input('Idade: '))
+        sexo = input('Sexo(M/F): ').upper().strip()[0]
         if sexo == 'M' and idade > 21:
-            print (nome)
-
-
+            print(nome)
 
 #5. Sabendo-se que a unidade lógica e aritmética calcula o produto através de somas
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
 #lidos. Suponha que os números lidos sejam positivos.
-
-
+def q5():
+    erro = True
+    # while True: # poderia ser um laço infinito e não precisar da variável erro
+    while erro == True:
+        fator1 = 0
+        try: # Bloco que permite tratar instruções que gerem erros
+            fator1 = int(input('Número 1: '))
+        except ValueError: # só é executado para o tipo de erro ValueError
+            print('O valor informado não é um número inteiro!')
+            erro = True
+        except: # captura qualquer erro
+            print('Ocorreu um erro desconhecido! Tente novamente!')
+            erro = True
+        else:
+            # break comando para interromper o laço de repetição
+            erro = False # executa se não ocorrer erro
+        finally:
+            print(f'Número 1 = {fator1}') # mensagem sempre é exibida, com erro ou não
+    erro = True
+    while erro == True:
+        try:
+            fator2 = int(input('Número 2: '))
+            erro = False
+        except ValueError:
+            print('O valor informado não é um número inteiro!')
+            erro = True
+    produto = 0
+    for _ in range(fator1):
+        produto += fator2
+    print(f'{fator1} * {fator2} = {produto}')
 
 #6. Crie um programa que imprima os 20 primeiros termos da série de Fibonacci.
 #Observação: os dois primeiros termos desta série são 1 e 1 e os demais são gerados
@@ -58,6 +101,7 @@ def q6():
         num1 = num2
         num2 = soma
         print(soma)
+
 #7. Crie um programa que permita entrar com o nome, a nota da
 #prova 1 e da prova 2 de 15 alunos. Ao final, imprimir uma listagem, contendo:
 #nome, nota da prova 1, nota da prova 2, e média das notas de cada aluno. Ao final,
@@ -65,7 +109,7 @@ def q6():
 def q7():
     relatorio = '\nNOME\tN1\tN2\tMEDIA\n'
     media_geral = 0
-    qtde_alunos = input_int ('Qtde de Alunos: ')
+    qtde_alunos = input_int('Qtde de Alunos: ')
     for _ in range(qtde_alunos):
         nome = input('Nome: ')
         n1 = input_float('Nota 1: ')
@@ -77,13 +121,18 @@ def q7():
     print(relatorio)
     print(f'\nMédia Geral: {round(media_geral,1)}')
 
-#8. Faça umprograma que permita entrar com o nome e o salário bruto de 10 pessoas.
+#8. Faça um programa que permita entrar com o nome e o salário bruto de 10 pessoas.
 #Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
 #calculado conforme a tabela a seguir:
 #Salário IRRF
 #Salário menor que R$1300,00 Isento
 #Salário maior ou igual a R$1300,00 e menor que R$2300,00 10% do salário bruto
 #Salário maior ou igual a R$2300,00 15% do salário bruto
+def q8():
+    relatorio = '\nNOME\tSALÁRIO\tVALOR_ALIQUOTA\n'
+    
+
+
 
 #9. No dia da estréia do filme "Procurando Dory", uma grande emissora de TV realizou
 #uma pesquisa logo após o encerramento do filme. Cada espectador respondeu
@@ -311,40 +360,4 @@ def q7():
 #idade.
 
 questao = int(input('Questão a ser executada: '))
-match questao:
-    case 1:
-        q1()
-    case 2:
-        q2()
-    case 3:
-        q3()
-    case 4:
-        q4()
-    case 5:
-        q5()
-    case 6:
-        q6()
-    case 7:
-        q7()
-    case 8:
-        q8()
-    case 9:
-        q9()
-    case 10:
-        q10()
-    case 11:
-        q11()
-    case 12:
-        q12()
-    case 13:
-        q13()
-    case 14:
-        q14()
-    case 15:
-        q15()
-    case 16:
-        q16()
-    case 17:
-        q17()
-    case 18:
-        q18()
+eval(f'q{questao}()')
